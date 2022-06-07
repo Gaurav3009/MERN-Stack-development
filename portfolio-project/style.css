@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke
+}
+
+#navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    height: 8.5vh;
+    
+}
+.left{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.left img{
+    height: 100%;
+}
+.right{
+    display: flex;
+    flex-direction: row;
+    height: 50%; 
+}
+.right img{
+    height: 100%;
+}
+.profile{
+    margin-top: 20px;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    width: 30%;
+    /* border: 2px solid black; */
+    background-color: white;
+}
+#image{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+#image img{
+    border-radius: 50%;
+    border: 2px solid rgb(80, 80, 236);
+    height: 60%;
+    width: 60%;
+    margin: 5% 0% 0% 20%;
+}
+#details{
+    display: flex;
+    flex-direction: column;
+}
+.contact{
+    height: 15px;
+}
+.acad{
+    width: 50%;
+}
+.education{
+    background-color: white;
+    padding-left: 3%;
+}
+.work-exp{
+    background-color: white;
+    padding-left: 3%;
+}
+.projects{
+    background-color: white;
+    padding-left: 3%;
+}
+.tech{
+    background-color: white;
+    padding-left: 3%;
+}
+.achieve{
+    background-color: white;
+    padding-left: 3%;
+}
+
+
