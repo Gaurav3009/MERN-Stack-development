@@ -86,3 +86,30 @@ arr.forEach((element, index, array) => {
 // to find the index of a string 
 var str = "BagadBilla";
 console.log(str.indexOf("Billa"));
+// Syntax 
+// arr.indexOf(value, startingIndex);
+str.includes("B"); // Returns a boolean value
+
+// Browser web API 
+// 1> Geolocation API 
+// 2> Camera API 
+// 3> Console API 
+// 4> DOM manipulation API
+
+
+// document is inside window 
+// window.document
+// window is a global object 
+
+// DOM in JavaScript
+// *********SELECTORS IN JAVSCRIPT**********
+// 1> Class : document.getEelmentByClassName('class_name');
+// 2> Id : document.getElementById('Id_name');
+// 3> Tag : document.getElementByTagName('tag_name');
+// All three returns the HTML collection 
+// 4> Query : document.querySelector(".class_name/tag_name/#id");
+
+
+// document.getElementsByClassName('class_name')[index]
+
+document.querySelector('.box');
