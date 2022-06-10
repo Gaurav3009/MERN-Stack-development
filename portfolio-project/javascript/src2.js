@@ -92,5 +92,9 @@ Math.truc(5.9);
 // event listener 
 const boxD = document.getElementById("box");
 boxD.addEventListener("click", ()=>{
-    alert("Miracle Miracle");
-})
+    alert("Miracle Miracle"); // box.innerText = "Hemllo";
+});
+// Mouse events 
+// click mouseenter mouseleave mouseup mousedown 
+// Keyboard events 
+// keypress keyup keydown 

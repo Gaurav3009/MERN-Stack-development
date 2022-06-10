@@ -1,0 +1,31 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Joan&display=swap") */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --red : rgb(238, 132, 132);
+    --bg : rgb(233, 172, 172);
+}
+.gameContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 200px); 
+}
+.box{
+    border: 2px solid var(--red);
+}
+.box:hover{
+    background-color: var(--bg);
+    cursor: pointer;
+}
