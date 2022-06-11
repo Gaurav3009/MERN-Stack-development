@@ -1,20 +1,25 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Joan&display=swap") */
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Poppins:ital,wght@1,200&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif;
+     */
+     font-family: 'Poppins', sans-serif;
+     font-weight: bold;
+     /* background-color: whitesmoke; */
 }
 
 :root{
-    --red : rgb(238, 132, 132);
+    --red : rgb(173, 52, 52);
     --bg : rgb(233, 172, 172);
 }
 .gameContainer{
     display: flex;
     justify-content: space-evenly;
     margin: 30px 10px;
+
 }
 
 .grid{
@@ -23,9 +28,32 @@
     grid-template-columns: repeat(3, 200px); 
 }
 .box{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     border: 2px solid var(--red);
+    text-align: center;
+    font-size: 50px;
+    
 }
 .box:hover{
     background-color: var(--bg);
     cursor: pointer;
+    /* animation-name: example-box;
+    animation-duration:4s; */
+    
 }
+
+.reset{
+    background-color: var(--red);
+    border: 4px solid black;
+    border-radius: 5px;
+    height: 3rem;
+    width: 5rem;
+}
+.reset:hover{
+    cursor: pointer;
+    background-color: rgb(204, 64, 64);
+    font-weight: bolder;
+}
+
