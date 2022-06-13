@@ -39,9 +39,6 @@
 .box:hover{
     background-color: var(--bg);
     cursor: pointer;
-    /* animation-name: example-box;
-    animation-duration:4s; */
-    
 }
 
 .reset{
