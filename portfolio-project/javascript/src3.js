@@ -160,3 +160,39 @@ async function combine(){
 }
 
 // Basic difference between async await and .then 
+
+
+// document.getElementById("gameContainer").addEventListener("click", ()=>{
+//     console.log("clicked");
+// });
+
+// document.getElementById("reset").addEventListener("click", ()=>{
+//     console.log("clicked");
+// });
+
+// use stopPropogation() to stop the bubbling
+// anchor tag refreshes the page 
+
+
+// Block is the multiple javascripts statements group together 
+// Scope is where a variable is accessible (let var and const)
+
+var a = 5;
+function a(){
+    var a = 6;
+    console.log(a);
+} 
+a();
+console.log(a);
+
+// currying in javascript 
+
+function sum(a){
+    return function(b){
+        return function(c){
+            console.log(a + b + c);
+        }
+    }
+}
+
+sum(2)(3)(5);

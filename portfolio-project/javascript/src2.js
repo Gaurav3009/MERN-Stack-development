@@ -47,7 +47,7 @@ num.map((ele) => ele * 2).filter((ele) => ele>5);
 
 // 7> reduce 
 const sum = num.reduce((accumulator, ele) => accumulator += ele, 0);
-// returns teh sum of the array and the sum is inside stored in accumulator function and  starting value of the 0
+// returns the sum of the array and the sum is inside stored in accumulator function and  starting value of the 0
 const maximumValue = num.reduce((max, ele)=> max = (max > ele)?max:ele, -1);
 
 // 8> toUpperCase | toLowerCase | trim 
@@ -98,3 +98,15 @@ boxD.addEventListener("click", ()=>{
 // click mouseenter mouseleave mouseup mousedown 
 // Keyboard events 
 // keypress keyup keydown 
+
+
+// Objects 
+// Objects are the collection of properties in the javascript where each property is associated with a key value pair 
+
+// Prototype 
+// It is a mechanism by which javascript attaches properties of one object to another 
+// arr.prototype == array prototype 
+// arr.prototype.prototype == object prototype
+// arr.prototype.prototype.prototype == null
+
+console.log(arr._proto_);
