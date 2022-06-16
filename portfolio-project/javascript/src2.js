@@ -15,6 +15,10 @@ const drr = ["one", "two", "three", "four"];
 drr.sort(); // output ["four", "one", "three", "two"]
 // lexographical sort  
 
+brr.sort(function(a, b){
+    return a-b;
+});
+
 // CRUD : cREATE READ UPDATE DELETE 
 // 1. PUSH 
 let array = ["burger", "pizza", "gulabjamun"];
@@ -110,3 +114,116 @@ boxD.addEventListener("click", ()=>{
 // arr.prototype.prototype.prototype == null
 
 console.log(arr._proto_);
+
+function (a){
+    
+}
+
+
+// funcCall(1)(2)(3)....();
+
+// shallow copy is copy by reference 
+// deep copy is storing the values ate different memory location. It can be done using spread operator
+
+// new way of deep copy in case of nested objects
+let obj = JSON.parse(JSON.stringify(obj1)); // But we cannot copy function with this method
+// can be resolved using .deepCopy().
+
+// this --> points to an object which is executingcurrent piece of code
+
+// function abc(){
+//     this-> points to window object
+// }
+
+
+function display(){
+    console.log(this===window);
+}
+
+let obj1 = {
+    name : "abs",
+    age : 33
+};
+
+let obj2 = {
+    name : "abas",
+    age : 35
+};
+
+function displayName(city){
+    console.log(this.name, city);
+}
+
+displayName.call(obj);
+displayName.apply(obj2, ["Jalandhar"]);
+
+var out = displayName.bind(obj2, "Jalandhar");
+console.log(out, out());
+
+// Polyfill -> my own code if JS inbuilt function is not supported
+
+// map, filter, forEach, reduce
+
+// filter
+let zrr = [4, 2, 6, 5, 9, 7, 1, 2, 6, 4];
+
+Array.prototype.myFilter = function(callback) {
+    let result = [];
+    for(var i = 0; i < this.lenth; i++){
+        if(callback(this[i], i)){
+            result.push(this[i]);
+        }
+    }
+    return result;
+}
+
+let out = zrr.myFilter((element)=> {return elememnt > 4;});
+
+// IIFE --> Immediately Invoked Function Expression 
+// It provides some type of security as it is anonymous and we cannot call it from outside 
+(function(){
+    let a = 5;
+    var b = 6;
+    console.log(a+b);
+})();
+
+// Asynchronous behaviour in javascript 
+
+// Javascript is called as single threaded causes it doesn't have native API. we cannot create a new thread using some api
+// Web API is the API's provided by the browser
+
+console.log("start");
+setTimeout(()=>{
+    console.log("Hello");
+}, 0);
+console.log("end");
+// o/p : start end hello
+// Arrow function doesn;t have this  
+let obj3 = {
+    name : "abs",
+    age : 33,
+    display : ()=>{
+        console.log(this.name, this.age);
+    }
+};
+
+obj3.display(); // undefined undefined
+
+let p = new Promise((resolve, reject) =>{
+    if(true){
+        resolve("Hi");
+    }else{
+        reject("sorry");
+    }
+});
+
+p.then((val)=>{
+    console.log(val);
+}).catch((error)=>{
+    console.log(error);
+})
+
+// In destructuring we use spread operator 
+
+// defer will download the script tag parallal to the rendering of the HTML page but maintain the order of execution
+// async will download the script and then execute at the same time

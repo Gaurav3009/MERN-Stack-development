@@ -1,0 +1,31 @@
+React Js:
+    React is a javascript library used to create single page frontend application.
+    React is fast beacuse it uses virtual DOM.
+    also we can make reusable components in React.
+    Data flow is uni-directional from parent to child.
+    It uses JSX to write code simpler.
+
+Angular is a framework and javascript is a library.
+Framework gives us full power to deploy the app but library doesn't have that power.
+
+Single Page Application : React we don't have referesh and we can direct route and change the content. 
+It means we can change the contents on the same page using some conditions.
+This is why it is fast.
+
+Component : It is teh independent piece of code which we can implemennt anywhere.
+There are two types of components.
+1> Functional Components 
+2> Class Based Components
+
+
+Virtual DOM : It is the programming technique where a virtual copy of DOM is kept. 
+In DOM if a chnage happens in particular place whole page is rendered again.
+Virtual DOM is the virtual copy of the actual DOM in the memory and if any change made to it creates  another 
+virtual DOM with the changes and then compares using BFS and when changes found then the cahnges is applied
+and then the previous DOM is deleted.
+
+Reconciliation --> this live syncing is called Reconciliation
+
+JSX: It is teh way of writing HTML inside javascript.
+
+npm : is a package where we can access the codes pre written 
