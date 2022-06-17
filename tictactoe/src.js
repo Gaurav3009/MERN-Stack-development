@@ -52,25 +52,3 @@ reset.addEventListener("click", ()=>{
     
 
 });
-
-// document.getElementById("gameContainer").addEventListener("click", ()=>{
-//     console.log("clicked");
-// });
-
-// document.getElementById("reset").addEventListener("click", ()=>{
-//     console.log("clicked");
-// });
-
-// use stopPropogation() to stop the bubbling
-// anchor tag refreshes the page 
-
-
-// Block is the multiple javascripts statements group together 
-// Scope is where a variable is accessible (let var and const)
-
-var a = 5;
-if(true){
-    var a = 7;
-    console.log(a);
-}
-console.log(a);
