@@ -12,7 +12,7 @@ Single Page Application : React we don't have referesh and we can direct route a
 It means we can change the contents on the same page using some conditions.
 This is why it is fast.
 
-Component : It is teh independent piece of code which we can implemennt anywhere.
+Component : It is the independent piece of code which we can implemennt anywhere.
 There are two types of components.
 1> Functional Components 
 2> Class Based Components
@@ -29,3 +29,161 @@ Reconciliation --> this live syncing is called Reconciliation
 JSX: It is teh way of writing HTML inside javascript.
 
 npm : is a package where we can access the codes pre written 
+
+state,   Props
+State--> Properties of a compomnent -> changes -> componenets will re render.
+Props --> Properties when we want to transfer some properties from parent to child we use props
+
+Functional Components : 
+        just like a function is javascript and props can be received as a parameter inside the function 
+        function(props){
+            return (<div>
+            .....</div>);
+        }
+        props is an object inside the child and we can access the property using .
+
+        Hooks : in built functions in react to be used in functional components.
+
+        Life Cycle methods : function   There is a class based component.
+        Mounting Updated Unmounting.
+
+
+state : (behaviour) --> state has some values which defines the behaviour of that component.
+props : (properties) --> given by parent to its child.
+
+If any of these changes the page rerenders.
+rerenders -> update based on change. if(stateand props change)
+
+Components : (parts) --> portions of the website.
+
+Types of Componenets:
+    1> Class Based components :
+            Inheritance : Acquiring a child parent relation.
+            JavaScript class: 
+            class Rectangle{
+                constructor(length, breadth){
+                    this.length = length;
+                    this.breadth = breadth;
+                }
+                static RectangleSide(){
+                    console.log("Has four side");
+                }
+                properties(){
+                    console.log("opposite side have same lengths");
+                }
+            }
+            class Square extends Rectangle{
+                constructor(length){
+                    super();
+                }
+            }
+            In class components we have LifeCycle methods : Life cycle is the method of component class
+                class Footer extends Components{
+                    constructor(props){
+                        super(props);
+                        this.state = {
+                            key : val,
+                            k2 : val2
+                        }; // tocreate a state
+                    }
+                    this.props.someValue;
+                    To change state we use : this.setState({key : val});
+                }
+                Forbidden : never change props in child
+                    never update state in rerender because infinite loop will be triggered.
+                    render(){
+                        this.setState(...);
+                    }
+
+                    LifeCycle method : 
+                    Born : mounting --> mounted to DOM
+                    infant-teenage-adult-oldage --> Updating (state props changes and updating occurs)
+                    death : unmounting --> Removed from DOM
+
+                    1> Mounting : 
+                        a> Constructor : called one time (during creation)
+                        b> static getDerivedStateFromProps(Props, State) : 
+                                getDerivedStateFromProps(Props, State){
+                                    return {key : props.val};
+                                } // when we change the state or props it will be called implictly and change the props and state after the first time.
+                        c> render() : 
+                        d> componentDidMount() : called one time -->Component is mounted to DOM now would you want to do anything (API calls which happens only ones eg. login)
+                    
+                    2> Updating : 
+                        a> static getDerivedStateFrom()
+                        b> ShouldComponentUpdate(nextProps){
+                            if(this.props.val == this.nextProps.val){
+                                return false;
+                            }
+                        }
+                        c> render()
+                        d> getSnapshotBeforeUpdate() : used rarely 
+                            takes screenshot of current state before painting the changes to the DOM.
+                        e> componentDidUpdate(){
+                            API calls
+                        }
+
+    2> Functional components :
+            Earlier they were stateless in nature (they were weak therefore)
+            Hooks : in built function to replicate functionalities of lifeCycle method.
+            Rules : 
+            1> Sould be only implemented in react functional components.
+            2> Should be used on top level of function not inside nested structure(if for etc).
+
+            function Footer(props){
+                return(JSX);
+            }
+            Hooks : 
+            1> useState : gives functionalities of a state.
+            const[name, setName] = useState(" //initial_value");
+            name : variable , setName : function to change
+            setName("Harshal");
+
+            sideEffect : Did someting which results in something which is not the expected behaviour.
+            manipulate something which doesn't belong to its scope will cause a side effect.
+            example :
+                var a = 5;
+                function abc(){
+                    a = 7;
+                }
+                web API creates the side effects.
+                Types of side effects : 
+                a> with cleanup :
+                    setInterval() <--> clearInterval()
+                b> without cleanup : 
+                    API call
+                
+            useEffect : 
+                useEffect(()=>{
+                    return ()=>{
+                        clearInterval();
+                    }
+                }, x); 
+                * can be called after every update.
+                    if x is nothing then it will be called everytime,
+                    if x is [] (empty array) then called once like componentDidMount()
+                    if x is [val] only gets triggered if val changes
+            
+            for component will unmount 
+                useEffect(()=>{
+                    return ()=>{
+                        clearInterval();
+                    }
+                }, x); 
+
+        Handelling error 
+        // Available only in class based componnents
+        1> getDerivedStateFromError(){
+            return {hasError  :true};
+        }
+        2> componenetsDidCatch(error){
+            lof(error);
+        }
+
+Controlled and Uncontrolled components : 
+Controlled componenets means react can change
+Uncontrolled behaviour react cannot controll -- >> controlled directly by DOM
+    In react we can create a componenent using useRef :
+    useRef --> If it change, It doesn't trigger a rerender.
+
+componenetDidUpdate using useEffect ? 
