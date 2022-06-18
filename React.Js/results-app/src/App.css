@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title{
+  text-align: center;
+}
+
+.table-data{
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.tab{
+  text-align: center;
+  border: 2px dashed green;
+}
+.tab th{
+  border: 2px dashed rgb(177, 177, 213);
+  background-color: whitesmoke;
+}
+.tab td{
+  border: 2px dashed pink;
+}
+
+.tab th:hover{
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.tab td:hover{
+  background-color: pink;
+  cursor: pointer;
+}
+/* applying css on two diff elements */
+/* .tab td:hover, .tab th:hover{
+  background-color: pink;
+  cursor: pointer;
+} */
