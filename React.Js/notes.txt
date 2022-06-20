@@ -187,3 +187,101 @@ Uncontrolled behaviour react cannot controll -- >> controlled directly by DOM
     useRef --> If it change, It doesn't trigger a rerender.
 
 componenetDidUpdate using useEffect ? 
+
+
+Prop drilling : Penetration 
+passing of prop from parent to childeren so that it can be used at the place where it was needed to be deliver.
+State Manangemen tool : Redux(Most Popular one), Flus, Clearx // used to avoid prop drilling
+var data = { // global object // object literal the way of defining
+    k1 : v1,
+    k2 : v2,
+    k3 : v3
+};
+const store = new clearx(data); // new instance of the object
+
+** Observer Pattern : // clearx folow this pattern even redux 
+    There is one subject and multiple observer and whenever the state changes in the subject then it is reflected among all the observer.
+    // It is also called as the fan-out effect. 
+    example : notification (Polling --> Pinging someone in frequent interval.)
+// How to link the instances to the global object?
+store.({
+    key1, key2, key3
+}).link(this); // any of this key values changes it will be updated in the new instances 
+and the componenet will rerender.
+
+# Context: 
+    It is the way available in functional components which is used to avoid prop drilling. 
+    Context has three phases: 
+    1> Creation Phase
+        We can simply create a context using this syntax :-
+            const quoteContext = React.createContext();
+    2> Wrapping up Phase 
+        We have a provider to provide and useContext for consumption.
+        Now we are going to create a function which will act as a provider.
+            export function quoteContextProvider({childeren}){
+                const [name, setName] = useState("");
+                const [age, setAge] = useState(0);
+                let value = {
+                    name,
+                    setName, 
+                    age,
+                    setAge
+                }
+                return <quoteContext.Provider value = {value}>
+                {childeren}
+                </quoteContext.provider>
+            }
+            <quoteContext.Provider>
+                <quote/>
+            </quoteContext.Provider>
+    3> Consumption Phase
+        Wherever we want to use we can destructure these.
+        const {name, setName} = useContext(quoteContext);
+
+# Material UI / Ant-Design : 
+    Bootstrap gives us the UI componenets to to use in our website.
+    Similarly Mtaerial UI and Ant-Design also give the UI componenets to be use in React.
+
+* How a website works?
+    When we search "amazoan.in" on internet it contacts with the DNS server and search for the IP address of the amazon.in and return it to the browswer.
+    Now the browser makes request to that IP address associated with the site and the server does does some processing and delivers a particular response.
+    Now the server response consists of data whic is nothing just a (HTML CSS AND JavaScript)
+
+API : (Application Programming Interface) --> prer-written code which is used to perform some action
+--> function opened to the internet provided we know the IP of the machine and the name of the API.
+Currently we have a twi tier architecture : 
+Client Server Model : 
+        Client <----> Server
+
+HTTP : Hypertext Transfer Protocol (Protocol --> set of rules)
+    It is teh set of rules using which the communication occuers between two devices using Internet.
+
+REST API :  (REST --> Representational State Transfer)
+    REST is an architectural style of representing something.
+
+RESTful API : REST architectural constraints.
+    1> Uniform Interface : doesn't discriminate depending on the device from where the request was raised. (same response)
+    2> Statelessness : Store session data 
+    3> Cachable : storing the data in Cache memory.
+    Storing the request response data in the Cache : when next time we do teh same request we will be getting the response from the cache memory rather than performing another request. (same response)
+    4> Client Sever Architecture : 
+    5> Layred Architecture :
+    6> Code on Demand : Server sends code to execute by client.
+
+Operations : 
+    CRUD : Create Read Update Delete
+
+# Axios & FetchAPI : 
+    They are the ways to make HTTP calls.
+    They are promise based.
+
+# Status code : 
+    1xx --> information
+    2xx --> success
+    3xx --> redirection
+    4xx --> client side error
+    5xx --> server sie error
+    We send data to server as "data" in axios & as "body" in fetch.
+    axios().then().catch()
+    fetch(url).then().catch()
+    // goes nside the catch if there is an network error in fetch
