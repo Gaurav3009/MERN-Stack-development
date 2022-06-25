@@ -1,4 +1,4 @@
-React Js:
+ React Js:
     React is a javascript library used to create single page frontend application.
     React is fast beacuse it uses virtual DOM.
     also we can make reusable components in React.
